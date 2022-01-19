@@ -23,7 +23,22 @@ Develop a vault where users can wrap their ether. Users should be able to send e
 ## Steps
 
 -   Create a fork of this repo
--   Checkout a new branch by your name
+-   Create a new branch with your name. You can use the following command
+
+    ```
+    git checkout -b my-name
+    ```
+
+-   Install all dependencies
+
+    ```
+    npm install
+    ```
+
+-   Run Tests
+    ```
+    npx hardhat test
+    ```
 -   Submit a PR from forked repo to main branch of this repo
 
 ## Notes
