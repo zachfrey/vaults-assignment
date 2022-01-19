@@ -29,4 +29,4 @@ Develop a vault where users can wrap their ether. Users should be able to send e
 ## Notes
 
 -   Use events where necessary
--   Write tests for your contracts
+-   Write tests for your contracts. Add them in `test` directory
