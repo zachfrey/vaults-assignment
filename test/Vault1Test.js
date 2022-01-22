@@ -22,4 +22,23 @@ describe("Vault 1", () => {
 			expect(await vault1.owner()).to.equal(owner.address);
 		  });
 	});
+
+	describe("Initial State", function () {
+		it("Should not allow initial withdrawals", async function () {
+			await expect(
+				vault1.withdraw(42)
+			).to.be.revertedWith("Insufficient tokens");
+		});
+	});
+
+	describe("Withdraws and deposits", function () {
+		it("Should allow deposits", async function () {
+			await vault1.deposit(42);
+		});
+
+		it("Should succeed withdrawing funds", async function () {
+			await vault1.withdraw(21);
+		});
+		
+	});
 });
