@@ -6,7 +6,7 @@ describe("Vault 1", () => {
 	let Vault1, vault1;
     let owner;
 
-	beforeEach(async () => {
+	before(async () => {
 		Vault1 = await ethers.getContractFactory("Vault1");
 		[owner] = await ethers.getSigners();
 
