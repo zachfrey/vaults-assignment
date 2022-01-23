@@ -3,17 +3,12 @@ pragma solidity ^0.8.4;
 
 import "hardhat/console.sol";
 
-contract Vault1 {
+import "@openzeppelin/contracts/access/Ownable.sol";
 
-    address public owner;
+contract Vault1 is Ownable {
 
     mapping (address => uint) private _vault;
 
-    // Constructor: save owner for later
-    constructor() {
-        owner = msg.sender;
-    }
-    
     function deposit(uint _amount) external {
         console.log("Sender %s balance is %s, adding %s", msg.sender, _vault[msg.sender], _amount);
         _vault[msg.sender] += _amount;

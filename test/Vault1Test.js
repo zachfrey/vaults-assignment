@@ -39,6 +39,15 @@ describe("Vault 1", () => {
 		it("Should succeed withdrawing funds", async function () {
 			await vault1.withdraw(21);
 		});
-		
+
+		it("Should succeed withdrawing to zero", async function () {
+			await vault1.withdraw(21);
+		});
+
+		it("Should not allow further withdrawals", async function () {
+			await expect(
+				vault1.withdraw(1)
+			).to.be.revertedWith("Insufficient tokens");
+		});
 	});
 });
